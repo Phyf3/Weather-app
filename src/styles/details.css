@@ -1,0 +1,60 @@
+.details {
+    background: rgba(16, 14, 29, 1);
+    height:100%;
+    display: grid;
+    place-items: center;
+}
+.summary{
+    padding: 3.25rem 3.375rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;;
+    gap: 2.5rem;
+}
+.summary_card {
+    background: rgba(30, 33, 58, 1);
+    width: 7.5rem;
+    height: 11.0625rem;
+    display: grid;
+    place-items: center;
+}
+.summary_card h2 {
+    font-weight: 500;
+    font-size: 16px;
+    color: white;;
+}
+.summary_card img {
+    width: 56.44px;
+    height: 62px;
+}
+.summary_card--temp span:nth-child(1) {
+    color: rgba(231, 231, 235, 1);
+}
+.summary_card--temp span:nth-child(2) {
+    color: rgba(160, 159, 177, 1);
+}
+
+.highlights {
+    display: grid;
+    color: rgba(231, 231, 235, 1);
+}
+.highlight_card {
+    background: rgba(30, 33, 58, 1);
+    width: 20.5rem;
+    padding: 1.375rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;;
+    display: grid;
+}
+.highlight_card h2 {
+    font-weight: 500;
+    font-size: 16px;
+}
+.value {
+    font-size: 4rem;
+    font-weight: 700;
+}
+.extra {
+    margin-top: 1.9375rem;
+    font-weight: 500;
+    font-size: 14px;
+}

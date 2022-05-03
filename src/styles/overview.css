@@ -46,7 +46,7 @@
 .overview main section:nth-child(2) {
     color: rgba(231, 231, 235, 1);
     position: relative;
-    bottom:3rem;
+    top:1.7rem;
 }
 
 .degree h1>span{
@@ -56,6 +56,9 @@
 .degree h1 {
     font-size: 3rem;;
     color: #A09FB1;
+}
+.weather-type {
+    margin-top:1.5rem;
 }
 .weather-type h2 {
     font-weight: 600;
@@ -67,7 +70,7 @@
     display: flex;
     justify-content: space-between;
     width:50vw;
-    margin: 0 auto;
+    margin: 1.5rem auto;
     font-weight: 500;
     font-size: 1.4rem;
     color: #88869D;
