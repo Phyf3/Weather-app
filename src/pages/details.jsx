@@ -81,11 +81,11 @@ const Details = ({data, loading}) => {
 
           {loading ? <h1>Loading...</h1> :
             <p className='value'>  <span>{data.current.humidity}</span>%  </p>
-          }
+          } 
 
-          <div className="extra">
+           {/* <div className="extra">
             <progress value={data.current.humidity} max="100"></progress>
-          </div>
+          </div> */}
         </div>
 
         <div className="highlight_card">
