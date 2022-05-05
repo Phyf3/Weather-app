@@ -6,61 +6,23 @@ const Details = ({data, loading}) => {
   return (
     <div className="details">
       <div className="summary">
-        <div className="summary_card">
-          <h2>Tomorrow </h2>
+       
+          {loading ? 
+            <h1>Loading...</h1> : 
 
-          <img src={thunderstorm} alt="" />
+            data.forecast.forecastday.map((res) => (
+              <div className="summary_card" key = {res.date}>
+                <h2> {res.date} </h2>
 
-          <div className="summary_card--temp">
-            <span>10 °C</span>
-            <span>18 °C</span>
-
-          </div>
-        </div>
-        <div className="summary_card">
-          <h2>Tomorrow </h2>
-
-          <img src={thunderstorm} alt="" />
-
-          <div className="summary_card--temp">
-            <span>10 °C</span>
-            <span>18 °C</span>
-
-          </div>
-        </div>
-        <div className="summary_card">
-          <h2>Tomorrow </h2>
-
-          <img src={thunderstorm} alt="" />
-
-          <div className="summary_card--temp">
-            <span>10 °C</span>
-            <span>18 °C</span>
-
-          </div>
-        </div>
-        <div className="summary_card">
-          <h2>Tomorrow </h2>
-
-          <img src={thunderstorm} alt="" />
-
-          <div className="summary_card--temp">
-            <span>10 °C</span>
-            <span>18 °C</span>
-
-          </div>
-        </div>
-        <div className="summary_card">
-          <h2>Tomorrow </h2>
-
-          <img src={thunderstorm} alt="" />
-
-          <div className="summary_card--temp">
-            <span>10 °C</span>
-            <span>18 °C</span>
-
-          </div>
-        </div>
+                <img src={res.day.condition.icon} alt="" />
+      
+                <div className="summary_card--temp">
+                  <span>{res.day.maxtemp_f}℉</span>
+                  <span>{res.day.maxtemp_c}℃</span>
+                </div>
+              </div>
+            ))
+            }
       </div>
       <div className="highlights">
         <h1>Today's Highlights </h1>
@@ -79,13 +41,19 @@ const Details = ({data, loading}) => {
         <div className="highlight_card">
           <h2>Humility</h2>
 
-          {loading ? <h1>Loading...</h1> :
+          {loading ? 
+            <h1>Loading...</h1> 
+              :
             <p className='value'>  <span>{data.current.humidity}</span>%  </p>
           } 
 
-           {/* <div className="extra">
-            <progress value={data.current.humidity} max="100"></progress>
-          </div> */}
+          {loading ? 
+            <h1>Loading...</h1> 
+              :
+            <div className="extra">
+              <progress value={data.current.humidity} max="100"></progress>
+            </div>
+          }
         </div>
 
         <div className="highlight_card">
@@ -104,6 +72,8 @@ const Details = ({data, loading}) => {
           }
         </div>
       </div>
+
+      {/* Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a> */}
     </div>
   )
 }

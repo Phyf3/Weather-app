@@ -18,7 +18,7 @@ return (
 
     <main>
         <section>
-            <img src={shower} alt="" />
+            <img src={data.current.condition.icon} alt="" />
         </section> 
 
         <section>
