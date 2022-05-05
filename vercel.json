@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+        { "source": "/:endpoint/(.*)", "destination": "/:endpoint" },
+        { "source": "/:woeid/(.*)", "destination": "/:woeid" }
+
+    ]
+  }

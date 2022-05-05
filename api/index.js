@@ -15,6 +15,8 @@ app.get('/:endpoint', (req, res) => {
     console.log(endpoint)
     console.log(req.params.endpoint)
     console.log(req.query.lattlong)
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     axios.get(endpoint).then(response => {
         res.json(response.data)
     }).catch(error => {
@@ -26,6 +28,8 @@ app.get('/:woeid', (req, res) => {
     let woeid = "https://www.metaweather.com/api/location/" + req.params.woeid
     console.log("woeid ep", woeid)
     console.log("woeid", req.params.woeid)
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     axios.get(woeid).then(response => {
         res.json(response.data)
     }).catch(error => {
@@ -58,3 +62,5 @@ app.listen(3000, () => {
 // // })
 
 // // app.listen(3000);
+
+module.exports = app;
