@@ -12,7 +12,9 @@ return (
         </div>
 
         <div>
+        {loading ? <h1>Loading...</h1> :
             <img className='pointer' src={pointer} alt="" />
+        }
         </div>
     </header>
 
