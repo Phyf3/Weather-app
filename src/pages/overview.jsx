@@ -12,15 +12,15 @@ return (
         </div>
 
         <div>
-        {loading ? <h1>Loading...</h1> :
             <img className='pointer' src={pointer} alt="" />
-        }
         </div>
     </header>
 
     <main>
         <section>
+        {loading ? <h1>Loading...</h1> :
             <img src={data.current.condition.icon} alt="" />
+        }
         </section> 
 
         <section>
