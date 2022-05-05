@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const http = axios.create({
-    baseURL : "https://www.metaweather.com/api/location"
+    baseURL : "http://api.weatherapi.com/v1"
 });
 
 export default http

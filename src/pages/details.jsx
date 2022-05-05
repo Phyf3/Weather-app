@@ -2,7 +2,7 @@ import React from 'react'
 import thunderstorm from '../images/Thunderstorm.png'
 import '../styles/details.css'
 
-const Details = () => {
+const Details = ({data, loading}) => {
   return (
     <div className="details">
       <div className="summary">
@@ -67,7 +67,9 @@ const Details = () => {
         <div className="highlight_card">
           <h2>Wind Status</h2>
 
-          <p className='value'>7 mph</p>
+          {loading ? <h1>Loading...</h1> :
+            <p className='value'>  <span>{data.current.wind_mph}</span>mph  </p>
+          }
 
           <div className="extra">
             <p>WSW</p>
@@ -75,33 +77,31 @@ const Details = () => {
         </div>
 
         <div className="highlight_card">
-          <h2>Wind Status</h2>
+          <h2>Humility</h2>
 
-          <p className='value'>7 mph</p>
+          {loading ? <h1>Loading...</h1> :
+            <p className='value'>  <span>{data.current.humidity}</span>%  </p>
+          }
 
           <div className="extra">
-            <p>WSW</p>
+            <progress value={data.current.humidity} max="100"></progress>
           </div>
         </div>
 
         <div className="highlight_card">
-          <h2>Wind Status</h2>
+          <h2>Visiblity</h2>
 
-          <p className='value'>7 mph</p>
-
-          <div className="extra">
-            <p>WSW</p>
-          </div>
+          {loading ? <h1>Loading...</h1> :
+            <p className='value'>  <span>{data.current.vis_miles }</span> miles  </p>
+          }
         </div>
 
         <div className="highlight_card">
-          <h2>Wind Status</h2>
+          <h2>Air Pressure</h2>
 
-          <p className='value'>7 mph</p>
-
-          <div className="extra">
-            <p>WSW</p>
-          </div>
+          {loading ? <h1>Loading...</h1> :
+            <p className='value'>  <span>{data.current.pressure_mb }</span> miles  </p>
+          }
         </div>
       </div>
     </div>
