@@ -58,3 +58,24 @@
     font-weight: 500;
     font-size: 14px;
 }
+
+
+@media screen and (min-width: 1024px) {
+    
+    .details {
+        width: 75vw;
+    }
+    .summary{
+        display: flex;
+    }
+    .highlight {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        column-gap:2rem;
+    }
+
+    .highlight_card {
+        background: rgba(30, 33, 58, 1);
+        width: 17rem;
+    }
+ }
