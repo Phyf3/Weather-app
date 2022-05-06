@@ -3,7 +3,7 @@ import pointer from '../images/target.svg'
 import '../styles/overview.css'
 import shower from '../images/Shower.png'
 
-const Overview = ({data, loading}) => {
+const Overview = ({data, loading, getLattLong}) => {
 return (
 <div className='overview'>
     <header className='overview_header' >
@@ -12,7 +12,7 @@ return (
         </div>
 
         <div>
-            <img className='pointer' src={pointer} alt="" />
+            <img onClick={getLattLong} className='pointer' src={pointer} alt="" />
         </div>
     </header>
 

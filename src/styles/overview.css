@@ -40,7 +40,7 @@
 }
 .overview main section:nth-child(1) img {
     margin-top: 5.375rem;
-    width: 150px;
+    width: 40vw;
     height: 174px;
 }
 .overview main section:nth-child(2) {
@@ -50,7 +50,7 @@
 }
 
 .degree h1>span{
-    font-size: 12rem;
+    font-size: 9rem;
     color:rgba(231, 231, 235, 1);
 }
 .degree h1 {
@@ -81,4 +81,28 @@
     line-height: 21px;
     color: #88869D;
     margin-top:3rem;
+}
+
+
+@media screen and (min-width: 1024px) { 
+    .overview {
+        width: 25vw;
+        height:100%;
+    }
+
+    .overview main section:nth-child(1){
+        width:15vw;
+    }
+    .overview main section:nth-child(1){
+        width:25vw;
+    }
+    .overview main section:nth-child(1) img {
+        width : 15vw;
+    }
+    .degree h1>span{
+        font-size: 6rem;
+    }
+    .day {
+        width:15vw;
+    }
 }

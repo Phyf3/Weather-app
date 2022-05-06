@@ -12,6 +12,7 @@ function App() {
  const getLattLong =  ()  => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(handleLocation, error, option);
+        // console.log("Gotten Latt & Long")
     } else { 
         alert("Geolocation is not supported by this browser.");
     }
@@ -31,32 +32,32 @@ const option = {
 
 const handleLocation = async (pos) => {
     try {
-        const latitude = pos.coords.latitude;
-        const  longitude = pos.coords.longitude;
-        // console.log("latitude",pos.coords.latitude)
-        // console.log("longitude",pos.coords.longitude)
+      const latitude = pos.coords.latitude;
+      const  longitude = pos.coords.longitude;
+      // console.log("latitude",pos.coords.latitude)
+      // console.log("longitude",pos.coords.longitude)
 
-        const key = process.env.REACT_APP_API_KEY
+      const key = process.env.REACT_APP_API_KEY
 
-        const getLocation = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
+      const getLocation = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
 
-        // 10.0007862606
-        // 7.9973385669
-        console.log("res",getLocation.data)
-        console.log("locatiooon",getLocation.data.principalSubdivision)
-        const currentLocation = getLocation.data.principalSubdivision;
+      // 10.0007862606
+      // 7.9973385669
+      console.log("res",getLocation.data)
+      console.log("locatiooon",getLocation.data.principalSubdivision)
+      const currentLocation = getLocation.data.principalSubdivision;
 
-        const response = await http.get(`/forecast.json?key=${key}&q=${currentLocation}&days=10&aqi=no&alerts=no`)
+      const response = await http.get(`/forecast.json?key=${key}&q=${currentLocation}&days=10&aqi=no&alerts=no`)
 
-        console.log("weather api",response.data)
-        setData(response.data)
-        setLoading(false)
-
-        
-        } 
-        catch (error) {
-            console.log(error.response?.data || error.message)
-        }
+      console.log("weather api",response.data)
+      setData(response.data)
+    } 
+    catch (error) {
+      console.log(error.response?.data || error.message)
+    }
+    finally {
+      setLoading(false)
+    }
 }
 
 useEffect(() => {
@@ -67,7 +68,7 @@ useEffect(() => {
   return (
     <div className="App">
       <div>
-        <Overview data={data} loading = {loading}/>
+        <Overview data={data} loading = {loading} getLattLong = {getLattLong}/>
       </div>
 
       <div>
