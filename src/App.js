@@ -8,6 +8,8 @@ import http from './http-config'
 function App() {
   const [data, setData] = useState("")
   const [loading, setLoading] = useState(true);
+  const [openSearch, setOpenSearch] = useState(false);
+
 
  const getLattLong =  ()  => {
     if (navigator.geolocation) {
@@ -68,11 +70,17 @@ useEffect(() => {
   return (
     <div className="App">
       <div>
-        <Overview data={data} loading = {loading} getLattLong = {getLattLong}/>
+        <Overview 
+          data={data} loading = {loading} getLattLong = {getLattLong}
+          openSearch = {openSearch} setOpenSearch = {setOpenSearch} 
+        />
       </div>
 
       <div>
-        <Details data={data} loading = {loading}/>
+        <Details 
+          data={data} loading = {loading}
+          openSearch = {openSearch} setOpenSearch = {setOpenSearch}
+        />
       </div>
     </div>
   );

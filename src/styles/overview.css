@@ -3,6 +3,7 @@
     background: rgba(30, 33, 58, 1);
     height:100vh;
 }
+
 .overview_header {
     display: flex;
     padding:1rem;
@@ -87,11 +88,11 @@
 @media screen and (min-width: 1024px) { 
     .overview {
         width: 25vw;
-        height:100%;
+        height:100vh;
     }
-
-    .overview main section:nth-child(1){
-        width:15vw;
+    .overview main {
+        position: relative;
+        bottom:2rem;
     }
     .overview main section:nth-child(1){
         width:25vw;
@@ -104,5 +105,9 @@
     }
     .day {
         width:15vw;
+    }
+    .overview main section:nth-child(2) {
+        position: relative;
+        top: -1rem;
     }
 }

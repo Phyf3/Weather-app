@@ -36,6 +36,7 @@
 .highlights {
     display: grid;
     color: rgba(231, 231, 235, 1);
+
 }
 .highlight_card {
     background: rgba(30, 33, 58, 1);
@@ -64,18 +65,46 @@
     
     .details {
         width: 75vw;
+    
+        height: 100vh;
     }
     .summary{
         display: flex;
+        position: relative;
+        bottom: 1rem;;
+    }
+    .highlights {
+        position: relative;
+        bottom: 2rem;;
+    }
+    .highlights h1{
+        text-align: left;
+        font-size: 1.2rem;;
+        margin-bottom: 1rem;
     }
     .highlight {
         display: grid;
-        grid-template-columns:  1fr 1fr;
-        column-gap:2rem;
+        grid-template-columns:1fr  1fr 1fr;
+        column-gap:3rem;
+        row-gap:1.5rem;
     }
 
     .highlight_card {
         background: rgba(30, 33, 58, 1);
         width: 17rem;
+    }
+    .summary_card {
+        width: 10w;
+        height: 12vw;
+    }
+    .highlight_card {
+        width:15vw;
+        height:9vw;
+        margin-top:0rem;
+        margin-bottom: 0rem;;
+
+    }
+    .value {
+        font-size: 3rem;;
     }
  }

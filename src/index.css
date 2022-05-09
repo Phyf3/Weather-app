@@ -20,6 +20,6 @@ code {
 
 @media screen and (min-width: 1024px) { 
   body {
-    overflow-x:hidden ;
+    /* overflow:hidden ; */
   } 
 }
