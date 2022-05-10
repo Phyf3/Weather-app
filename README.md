@@ -1,4 +1,4 @@
-# Weather App - A [DevChallenges.io](http://devchallenges.io) challnege 
+# Weather App - A [DevChallenges.io](http://devchallenges.io) challenge 
 
 ## Table of Contents
 
