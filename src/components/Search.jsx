@@ -44,9 +44,7 @@ const Search = ({openSearch, setOpenSearch}) => {
                 </form>
             </div>
 
-            {value === '' ? <section>
-                <h1>"NO Content searched"</h1> 
-            </section> : 
+            {value === '' ? null : 
             <section>
                 <section>
                 {searching ? null :
@@ -79,8 +77,16 @@ const Search = ({openSearch, setOpenSearch}) => {
             }
         </div>
        
-        {value === '' ? null : 
-        <div className="seach_details">
+        {value === '' ? 
+        <div className="empty_search_details">
+            <div>
+                <h1>"NO Content searched"</h1> 
+                <p>Enter a location in the input field</p>
+            </div>
+            
+        </div>
+         : 
+        <div className="search_details">
             <main>
                 <SearchDetails searching = {searching} searchData = {searchData} />
             </main>

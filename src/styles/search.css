@@ -1,7 +1,15 @@
 .search_overview {
     background: rgba(30, 33, 58, 1);
     height:100vh;
-    border: 2px solid red;;
+    /* border: 2px solid red;; */
+}
+.empty_search_details {
+    background: rgba(16, 14, 29, 1);
+    height:100vh;
+    display: grid;
+    place-items: center;
+    color: white;
+    width:75vw;
 }
 .search {
     overflow: hidden;
@@ -52,5 +60,7 @@
         font-size: 1.1rem;
         margin-top:.5rem;
     }
+  
+
   
 }

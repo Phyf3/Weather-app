@@ -30,7 +30,7 @@ const Details = ({data, loading, openSearch, setOpenSearch}) => {
           }
         </div>
         <div className="highlights">
-          <h1>Today's Highlights </h1>
+          <h1>Today's Highlights  <span> in {loading ? null : data.location.name}</span>   </h1>
           <div className="highlight">
             <div className="highlight_card">
               <h2>Wind Status</h2>
